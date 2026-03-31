@@ -13,7 +13,8 @@ urlpatterns = [
     path('add_genre/', views.add_genre),
     path('editgenre/<int:id_genres>', views.edit_genre),
     
-    
+    path('artists/', views.artists),
+
     path('add_track/', views.add_track),
     path('deletetrack/<int:id_track>', views.deletetrack),
 ]

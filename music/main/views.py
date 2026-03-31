@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect 
-from .models import Genre,Track
+from .models import Genre,Track, Artist
 from django.http import HttpResponseRedirect, HttpResponse
-from .forms import GenreForm, TrackForm
+from .forms import GenreForm, TrackForm, ArtistsForm
 
 
 
@@ -68,3 +68,7 @@ def add_track(request):
     else:
         trackform = TrackForm()
         return render(request, "add_track.html", {'form':trackform})
+
+def artists(request):
+    a = Artist.objects.all()
+    return render(request, 'artist.html', {'artists': a})
