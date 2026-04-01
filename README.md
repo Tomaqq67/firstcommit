@@ -16,7 +16,7 @@
 
 ## Установка
 
-1. Скачайте репозиторий: git clone __ССЫЛКА__
+1. Скачайте репозиторий: git clone [__ССЫЛКА__](https://github.com/Tomaqq67/firstcommit.git)
 2. Создайте виртуальную среду python -m venv env
 3. Активируйте env/Scripts/activate
 4. Установите зависимости: pip install django pillow.
