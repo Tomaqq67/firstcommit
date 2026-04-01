@@ -72,3 +72,13 @@ def add_track(request):
 def artists(request):
     a = Artist.objects.all()
     return render(request, 'artist.html', {'artists': a})
+
+def add_artist(request):
+    if request.method == "POST":
+        artists_form = ArtistsForm(request.POST, request.FILES)
+        if artists_form.is_valid():
+            artists_form.save()
+            return redirect('add_artist/')
+    else:
+        artists_form = ArtistsForm()
+    return render(request, "add_artist.html", {'form': artists_form})

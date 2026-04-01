@@ -1,6 +1,7 @@
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from main import views
 
 urlpatterns = [
@@ -14,7 +15,8 @@ urlpatterns = [
     path('editgenre/<int:id_genres>', views.edit_genre),
     
     path('artists/', views.artists),
+    path('add_artist/', views.add_artist),
 
     path('add_track/', views.add_track),
     path('deletetrack/<int:id_track>', views.deletetrack),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
